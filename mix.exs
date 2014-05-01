@@ -22,6 +22,8 @@ defmodule WxCalc.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:exactor, github: "sasa1977/exactor"}
+    ]
   end
 end

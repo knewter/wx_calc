@@ -3,9 +3,9 @@ defmodule WxCalc.Window do
   alias WxCalc.CalculatorServer
 
   require Record
-  defrecordp :wx, Record.extract(:wx, from_lib: "wx/include/wx.hrl")
-  defrecordp :wxClose, Record.extract(:wxClose, from_lib: "wx/include/wx.hrl")
-  defrecordp :wxCommand, Record.extract(:wxCommand, from_lib: "wx/include/wx.hrl")
+  Record.defrecordp :wx, Record.extract(:wx, from_lib: "wx/include/wx.hrl")
+  Record.defrecordp :wxClose, Record.extract(:wxClose, from_lib: "wx/include/wx.hrl")
+  Record.defrecordp :wxCommand, Record.extract(:wxCommand, from_lib: "wx/include/wx.hrl")
 
   @one 11
   @two 12
@@ -34,7 +34,7 @@ defmodule WxCalc.Window do
     :wxFrame.connect(panel, :close_window)
     :wxFrame.connect(panel, :command_button_clicked)
     :wxFrame.show(panel)
-    {:ok, calc} = CalculatorServer.start
+    {:ok, calc} = CalculatorServer.start_link
     loop(panel, calc, display)
     :wxFrame.destroy(panel)
   end

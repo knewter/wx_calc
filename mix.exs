@@ -3,8 +3,8 @@ defmodule WxCalc.Mixfile do
 
   def project do
     [app: :wx_calc,
-     version: "0.0.1",
-     elixir: "~> 0.13.0",
+     version: "0.0.2",
+     elixir: "~> 1.1.1",
      deps: deps]
   end
 
@@ -23,7 +23,7 @@ defmodule WxCalc.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:exactor, github: "sasa1977/exactor"}
+      {:exactor, "~> 2.2.0"}
     ]
   end
 end

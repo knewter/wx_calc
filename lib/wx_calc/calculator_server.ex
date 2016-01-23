@@ -1,7 +1,7 @@
 defmodule WxCalc.CalculatorServer do
   use ExActor.GenServer
 
-  definit do: initial_state(%{display: "0", numbers: [], value: 0, current_operation: :noop})
+  defstart start_link, do: initial_state(%{display: "0", numbers: [], value: 0, current_operation: :noop})
 
   defcall get_display, state: state, do: reply(state.display)
 
